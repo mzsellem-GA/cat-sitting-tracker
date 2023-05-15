@@ -1,5 +1,21 @@
 <%- include('../partials/header') %>
-<h1>
-    This is the clients index page. 
-</h1>
+<h2>Client List</h2>
+
+<a href="/clients/new">Add a Client</a>
+
+<ul>
+    <% clients.forEach(function(client) { %>
+        <li>
+            <form action="/clients/<%= client.id %>?_method=DELETE" method="POST">
+                <button type="submit">X</button>
+            </form>
+            <a href="/clients/<%= client.id %>">
+                <%= client.name %>
+                <%= client.phone %>
+                <%= client.address %>
+                <%= client.cats %>
+            </a>
+        </li>
+        <% }); %>
+</ul>
 <%- include('../partials/footer') %>
