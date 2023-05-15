@@ -3,7 +3,7 @@ const Client = require('../models/client')
 function index(req, res, next) {
     Client.find({})
         .then(clients => {
-            console.log('i am in the clients index controller', clients)
+            // console.log('i am in the clients index controller', clients)
             res.render('clients/index', { clients, title: 'My Clients' })
         })
         .catch(next)
@@ -13,11 +13,8 @@ function index(req, res, next) {
 //READ action- show
 function show(req, res, next) {
     Client.findById(req.params.id)
-    .then(client => {
-        res.render('clients/show', {
-            client, 
-            title: 'Client Details'
-        })
+    .then(theClient => {
+        res.render('clients/show', { theClient, title: 'Client Details' })
     })
     .catch(next)
 }
