@@ -1,0 +1,11 @@
+<%- include('../partials/header') %>
+
+
+<section>
+        <h1>Address: <%= client.address %></h1>
+        <h1>Number: <%= client.phone %></h1>
+</section>
+<section>
+    <a href="/clients/edit/<%= client.id %>">Edit</a>
+
+<%- include('../partials/footer') %>
