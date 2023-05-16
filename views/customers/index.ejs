@@ -1,0 +1,18 @@
+<%- include('../partials/header') %>
+<h2>Customer List</h2>
+
+<a href="/customers/new">Add a Customer</a>
+
+<ul>
+    <% customers.forEach(function(customer) { %>
+        <li>
+            <form action="/customers/<%= customer.id %>?_method=DELETE" method="POST">
+                <button type="submit">X</button>
+            </form>
+            <a href="/customers/<%= customer.id %>">
+                <%= customer.name %>
+            </a>
+        </li>
+        <% }); %>
+</ul>
+<%- include('../partials/footer') %>

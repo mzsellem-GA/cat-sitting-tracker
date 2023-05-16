@@ -15,13 +15,13 @@ const catSchema = new Schema({
     timestamps: true
 });
 
-const clientSchema = new Schema({
+const customerSchema = new Schema({
     name: String,
     phone: Number, 
     address: String,
-    cats: [catSchema]
+    cats: [catSchema],
 }, {
     timestamps: true
 })
 
-module.exports = mongoose.model('Client', clientSchema)
+module.exports = mongoose.model('Customer', customerSchema)

@@ -10,6 +10,10 @@ const userSchema = new Schema(
 		},
 		email: String,
 		avatar: String,
+		customer: {
+			type: mongoose.Schema.Types.ObjectId,
+			ref: 'Customer'
+		}
 	},
 	{
 		timestamps: true,
