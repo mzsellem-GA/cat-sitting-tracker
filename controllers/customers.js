@@ -32,10 +32,43 @@ function show(req, res, next) {
     .catch(next)
 }
 
+//delete
+// function deleteCustomer(req, res, next) {
+//     Customer.findById(req.params.id)
+//         .then(customer => {
+//             return customer.deleteOne()
+//         })
+//         .then(() => {
+//             res.redirect('/customers')
+//         })
+//         .catch(next)
+// }
+
+function updateCustomerForm(req, res, next) {
+    Customer.findById(req.params.id)
+    .then(customer => {
+        res.render('customers/edit', {
+            customer,
+            title: 'Customer Edit Detail'
+        })
+    })
+}
+
+function updateCustomer(req, res, next) {
+    Customer.findById(req.params.id)
+    .then(customer => {
+        return customer.updateOne(req.body)
+    })
+    .then(() => res.redirect('/customers'))
+    .catch(next)
+}
 
 module.exports = {
     index,
     newCustomer,
     create,
     show,
+    updateCustomerForm,
+    updateCustomer,
+    // deleteCustomer,
 }
