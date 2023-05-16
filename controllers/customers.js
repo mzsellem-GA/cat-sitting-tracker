@@ -13,8 +13,19 @@ function newCustomer(req, res) {
     res.render('customers/new', { title: 'New Customer'})
 }
 
+//create
+function create(req, res, next) {   
+    // req.body.user = req.user._id 
+    Customer.create(req.body)
+        .then(() => {
+            return res.redirect('/customers')
+        })
+        .catch(next)
+}
+
 
 module.exports = {
     index,
-    newCustomer
+    newCustomer,
+    create
 }

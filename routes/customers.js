@@ -4,6 +4,7 @@ const customerCtrl = require('../controllers/customers')
 
 router.get('/', customerCtrl.index)
 router.get('/new', customerCtrl.newCustomer)
+router.post('/', customerCtrl.create)
 
 
 
