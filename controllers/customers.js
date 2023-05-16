@@ -14,8 +14,8 @@ function newCustomer(req, res) {
 }
 
 //create
-function create(req, res, next) {   
-    // req.body.user = req.user._id 
+function create(req, res, next) {  
+    req.body.user = req.user._id 
     Customer.create(req.body)
         .then(() => {
             return res.redirect('/customers')
@@ -36,6 +36,8 @@ function show(req, res, next) {
 function deleteCustomer(req, res, next) {
     Customer.findById(req.params.id)
         .then(customer => {
+            if(!customer.user.equals(req.user._id)) throw new Error('Unauthorized')
+        
             return customer.deleteOne()
         })
         .then(() => { res.redirect('/customers') })
@@ -55,6 +57,7 @@ function updateCustomerForm(req, res, next) {
 function updateCustomer(req, res, next) {
     Customer.findById(req.params.id)
     .then(customer => {
+        if(!customer.user.equals(req.user._id)) throw new Error('Unauthorized')
         return customer.updateOne(req.body)
     })
     .then(() => {res.redirect(`/customers/${req.params.id}`)})
