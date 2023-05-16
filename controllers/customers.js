@@ -33,16 +33,14 @@ function show(req, res, next) {
 }
 
 //delete
-// function deleteCustomer(req, res, next) {
-//     Customer.findById(req.params.id)
-//         .then(customer => {
-//             return customer.deleteOne()
-//         })
-//         .then(() => {
-//             res.redirect('/customers')
-//         })
-//         .catch(next)
-// }
+function deleteCustomer(req, res, next) {
+    Customer.findById(req.params.id)
+        .then(customer => {
+            return customer.deleteOne()
+        })
+        .then(() => { res.redirect('/customers') })
+        .catch(next)
+}
 
 function updateCustomerForm(req, res, next) {
     Customer.findById(req.params.id)
@@ -59,7 +57,7 @@ function updateCustomer(req, res, next) {
     .then(customer => {
         return customer.updateOne(req.body)
     })
-    .then(() => res.redirect('/customers'))
+    .then(() => {res.redirect('/customers')})
     .catch(next)
 }
 
@@ -70,5 +68,5 @@ module.exports = {
     show,
     updateCustomerForm,
     updateCustomer,
-    // deleteCustomer,
+    deleteCustomer
 }

@@ -8,8 +8,7 @@ router.get('/:id', customerCtrl.show)
 router.get('/:id/edit', customerCtrl.updateCustomerForm)
 router.post('/', customerCtrl.create)
 router.put('/:id', customerCtrl.updateCustomer)
-
-// router.post('/:id', customerCtrl.deleteCustomer)
+router.delete('/:id', customerCtrl.deleteCustomer)
 
 
 
