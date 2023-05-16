@@ -18,6 +18,7 @@ function create(req, res, next) {
     req.body.user = req.user._id 
     Customer.create(req.body)
         .then(() => {
+            console.log('this is customer in create', customer)
             return res.redirect('/customers')
         })
         .catch(next)
