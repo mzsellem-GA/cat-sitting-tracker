@@ -3,6 +3,20 @@
         <h3>Name: <%= customer.name %></h3>
         <h3>Address: <%= customer.address %></h3>
         <h3>Phone: <%= customer.phone %></h3>
+        <h3>Cats: <br> <% customer.cats.forEach(function(cat) { %>
+            <%= cat.name %>    
+            <%= cat.dob %>   
+            <br> 
+        <% }) %>
+        </h3>
+        <form action="/customers/<%= customer.id %>" method="POST">
+            Name: <input type="text" name="name">
+            Date of Birth: <input type="date" name="dob">
+            <button type="submit">Add Cat</button>
+        </form>
+
+        
+            
 </section>
     <a href="/customers/<%= customer.id %>/edit">Edit</a>
 
