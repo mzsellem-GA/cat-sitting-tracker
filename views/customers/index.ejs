@@ -1,18 +1,35 @@
 <%- include('../partials/header') %>
-<center>
-    <h2>Customer List</h2>
-
+<div class="container text-center">
     <a href="/customers/new">Add a Customer</a>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <table class="table table-wrapper">
+                <thead>
+                    <tr>
+                        <th>Customer Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% customers.forEach(function(customer) { %>
+                    <tr>
+                        <td class="col col-sm-6">
+                            <a href="/customers/<%= customer.id %>">
+                                <%= customer.name %>
+                            </a>
+                        </td>
+                        <td class="col col-sm-6">
+                            <form action="/customers/<%= customer.id %>?_method=DELETE" method="POST">
+                                <button type="submit" class="btn btn-danger">X</button>
+                            </form>
+                        </td>
+                    </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 
-    <ul>
-        <% customers.forEach(function(customer) { %>
-            <form action="/customers/<%= customer.id %>?_method=DELETE" method="POST">
-                <button type="submit">X</button>
-            </form>
-            <a href="/customers/<%= customer.id %>">
-                <%= customer.name %>
-            </a>
-        <% }); %>
-    </ul>
-</center>
+
+
 <%- include('../partials/footer') %>
