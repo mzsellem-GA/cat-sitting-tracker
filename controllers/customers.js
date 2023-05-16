@@ -23,9 +23,19 @@ function create(req, res, next) {
         .catch(next)
 }
 
+//show
+function show(req, res, next) {
+    Customer.findById(req.params.id)
+    .then(customer => {
+        res.render('customers/show', { customer, title: 'Customer Details' })
+    })
+    .catch(next)
+}
+
 
 module.exports = {
     index,
     newCustomer,
-    create
+    create,
+    show,
 }
