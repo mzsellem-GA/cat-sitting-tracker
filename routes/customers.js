@@ -11,6 +11,4 @@ router.put('/:id', customerCtrl.updateCustomer)
 router.delete('/:id', customerCtrl.deleteCustomer)
 
 
-
-
 module.exports = router;
