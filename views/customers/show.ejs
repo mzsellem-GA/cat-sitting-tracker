@@ -10,7 +10,7 @@
                 <li>
                     <%= cat.name %>
                     <%= cat.dob %>
-                    <form action="/customers/<%= customer.id %>/<%= cat.id %>?_method=DELETE" method="POST">
+                    <form action="/<%= customer.id %>/<%= cat.id %>?_method=DELETE" method="POST">
                         <button type="submit">X</button>
                     </form>
                 </li>

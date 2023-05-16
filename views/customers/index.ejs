@@ -5,14 +5,12 @@
 
 <ul>
     <% customers.forEach(function(customer) { %>
-        
         <form action="/customers/<%= customer.id %>?_method=DELETE" method="POST">
             <button type="submit">X</button>
         </form>
         <a href="/customers/<%= customer.id %>">
             <%= customer.name %>
         </a>
-       
     <% }); %>
 </ul>
 <%- include('../partials/footer') %>
