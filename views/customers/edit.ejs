@@ -1,8 +1,10 @@
 <%- include('../partials/header') %>
 
 <form action="/customers/<%= customer.id %>?_method=PUT" method="POST" autocomplete="off">
-    <input type="text" name="name" value="<%= customer.name %>">
-    <button type="submit">Update Customers</button>
+    <br> Name: <input type="text" name="name" value="<%= customer.name %>"><br>
+    <br> Phone: <input type="number" name="phone" value="<%= customer.phone %>"><br>
+    <br> Address: <input type="text" name="address" value="<%= customer.address %>"><br>
+    <br><button type="submit">Update Customers</button>
 </form>
 
 <%- include('../partials/footer') %>

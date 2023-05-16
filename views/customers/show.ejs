@@ -3,6 +3,7 @@
         <h3>Name: <%= customer.name %></h3>
         <h3>Address: <%= customer.address %></h3>
         <h3>Phone: <%= customer.phone %></h3>
+        <a href="/customers/<%= customer.id %>/edit">Edit</a>
         <h3>Cats:
         </h3>
         <ul>
@@ -24,6 +25,5 @@
         </form>
             
 </section>
-    <a href="/customers/<%= customer.id %>/edit">Edit</a>
 
 <%- include('../partials/footer') %>

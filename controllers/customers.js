@@ -57,7 +57,7 @@ function updateCustomer(req, res, next) {
     .then(customer => {
         return customer.updateOne(req.body)
     })
-    .then(() => {res.redirect('/customers')})
+    .then(() => {res.redirect(`/customers/${req.params.id}`)})
     .catch(next)
 }
 
