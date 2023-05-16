@@ -19,7 +19,7 @@ const customerSchema = new Schema({
     name: String,
     phone: Number, 
     address: String,
-    cats: [catSchema],
+    cats: [catSchema]
 }, {
     timestamps: true
 })

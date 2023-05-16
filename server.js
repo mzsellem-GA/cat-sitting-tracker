@@ -9,7 +9,7 @@ const passport = require('passport')
 const methodOverride = require('method-override')
 
 const indexRouter = require('./routes/index')
-const clientsRouter = require('./routes/clients');
+const customersRouter = require('./routes/customers');
 
 const app = express()
 
@@ -45,7 +45,7 @@ app.use(function (req, res, next) {
 app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/', indexRouter)
-app.use('/clients', clientsRouter)
+app.use('/customers', customersRouter)
 
 app.use(function (req, res, next) {
 	next(createError(404))
