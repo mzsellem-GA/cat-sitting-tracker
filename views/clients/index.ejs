@@ -1,0 +1,21 @@
+<%- include('../partials/header') %>
+<h2>Client List</h2>
+
+<a href="/clients/new">Add a Client</a>
+
+<ul>
+    <% theClients.forEach(function(theClient) { %>
+        <li>
+            <form action="/clients/<%= theClient.id %>?_method=DELETE" method="POST">
+                <button type="submit">X</button>
+            </form>
+            <a href="/clients/<%= theClient.id %>">
+                <%= client.name %>
+                <%= client.phone %>
+                <%= client.address %>
+                <%= client.cats %>
+            </a>
+        </li>
+        <% }); %>
+</ul>
+<%- include('../partials/footer') %>

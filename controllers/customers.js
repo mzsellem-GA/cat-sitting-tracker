@@ -21,36 +21,36 @@ function show(req, res, next) {
 //new 
 function newCustomer(req, res) {
     console.log('the new route has been hit')
-    res.render('customers/new')
+    res.render('customers/new', { title: 'New Customer'})
 }
 
 //create
-function create(req, res, next) {   
-    // req.body.user = req.user._id 
-    Customer.create(req.body)
-        .then(() => {
-            return res.redirect('/customers')
-        })
-        .catch(next)
-}
+// function create(req, res, next) {   
+//     // req.body.user = req.user._id 
+//     Customer.create(req.body)
+//         .then(() => {
+//             return res.redirect('/customers')
+//         })
+//         .catch(next)
+// }
 
 //delete
-function deleteCustomer(req, res, next) {
-    Customer.findById(req.params.id)
-        .then(customer => {
-            return customer.deleteOne()
-        })
-        .then(() => {
-            res.redirect('/customers')
-        })
-        .catch(next)
-}
+// function deleteCustomer(req, res, next) {
+//     Customer.findById(req.params.id)
+//         .then(customer => {
+//             return customer.deleteOne()
+//         })
+//         .then(() => {
+//             res.redirect('/customers')
+//         })
+//         .catch(next)
+// }
 
 
 module.exports = {
     index,
     newCustomer,
-    create, 
+    // create, 
     show,
-    deleteCustomer
+    // deleteCustomer
 }
