@@ -19,7 +19,11 @@ const customerSchema = new Schema({
     name: String,
     phone: Number, 
     address: String,
-    cats: [catSchema]
+    cats: [catSchema],
+    user: {
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: 'User'
+    }
 }, {
     timestamps: true
 })
