@@ -15,6 +15,7 @@ function newCustomer(req, res) {
 
 //create
 function create(req, res, next) {  
+    req.body.user = req.user._id
     Customer.create(req.body)
         .then((customer) => {
             console.log('this is customer in create', customer)
@@ -37,8 +38,9 @@ function show(req, res, next) {
 
 //delete
 function deleteCustomer(req, res, next) {
-    Customer.findById(req.params.id)
+    Customer.findById({user: req.user._id, _id:req.params.id})
         .then(customer => {
+            console.log('this is customer in delete customer', customer)
             return customer.deleteOne()
         })
         .then(() => { res.redirect('/customers') })
