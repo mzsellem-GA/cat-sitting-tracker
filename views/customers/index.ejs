@@ -15,7 +15,7 @@
                         <% customers.forEach(function(customer) { %>
                         <tr>
                             <td class="col col-sm-6">
-                                <a href="/customers/<%= customer.id %>">
+                                <a class="customer-name-link" href="/customers/<%= customer.id %>">
                                     <%= customer.name %>
                                 </a>
                             </td>
@@ -29,7 +29,7 @@
                     </tbody>
                 </table>
             </div>
-            <a href="/customers/new">Add a Customer</a>
+            <button type="submit" class="customer-button rounded"> <a class="add-customer-link" href="/customers/new"> Add a Customer</a></button>
         </div>
     </div>
 </div>

@@ -1,12 +1,12 @@
 const Customer = require('../models/customer')
 
 function addCatToCustomer(req, res, next) {
-    console.log('this is req.body in addcattocustomer', req.body)
-    console.log('this is req.params.customerId in addcattocustomer', req.params.customerId)
+    // console.log('this is req.body in addcattocustomer', req.body)
+    // console.log('this is req.params.customerId in addcattocustomer', req.params.customerId)
     Customer.findById(req.params.customerId)
         .then((customer) => {
             customer.cats.push(req.body)
-            console.log('the is customer.cats in add cat to customer', customer.cats)
+            // console.log('the is customer.cats in add cat to customer', customer.cats)
             return customer.save()
         })
         .then(() => res.redirect(`/customers/${req.params.customerId}`))

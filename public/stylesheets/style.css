@@ -16,3 +16,23 @@
 .table {
   background-color: white;
 }
+.customer-button {
+  color: white;
+  background-color: #af5ca9
+}
+.customer-name-link {
+  color: black;
+  text-decoration: none;
+}
+.add-customer-link {
+  color: white;
+  text-decoration: none;
+}
+.body-customer-new {
+  background-color:#c6e5ae;
+}
+.btn-custom {
+  background-color: #af5ca9;
+  border-color: #af5ca9;
+  color: #ffffff;
+}
