@@ -1,14 +1,27 @@
 <%- include('../partials/header') %>
 <section>
-        <h3>Name: <%= customer.name %></h3>
-        <h3>Address: <%= customer.address %></h3>
-        <h3>Phone: <%= customer.phone %></h3>
-        <a href="/customers/<%= customer.id %>/edit">Edit</a>
-        <h3>Cats:
+        <table class="table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Phone</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><%= customer[0].name %></td>
+                <td><%= customer[0].address %></td>
+                <td><%= customer[0].phone %></td>
+              </tr>
+            </tbody>
+          </table>
+          <div><button type="submit"> <a class="btn btn-custom edit-customer-link" href="/customers/<%= customer[0].id %>/edit">Edit</a></button></div>
+        <!-- <h3>Cats:
         </h3>
         <ul>
-            <% if (customer.cats) {%>
-                <% customer.cats.forEach(function(cat) { %>
+            <% if (customer[0].cats) {%>
+                <% customer[0].cats.forEach(function(cat) { %>
                     <li>
                         <%= cat.name %>
                         <%= cat.dob %>
@@ -20,13 +33,45 @@
             <% } else { %>
                 <h3>No Cats Yet</h3>
             <% } %>
-        </ul>
+        </ul> -->
+        <table class="table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Date of Birth</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% if (customer[0].cats) { %>
+                <% customer[0].cats.forEach(function(cat) { %>
+                  <tr>
+                    <td><%= cat.name %></td>
+                    <td><%= cat.dob %></td>
+                    <td>
+                      <form action="/<%= customer.id %>/<%= cat.id %>?_method=DELETE" method="POST">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                      </form>
+                    </td>
+                  </tr>
+                <% }); %>
+              <% } else { %>
+                <tr>
+                  <td colspan="3">No cats yet.</td>
+                </tr>
+              <% } %>
+            </tbody>
+          </table>
 
-        <form action="/customers/<%= customer.id %>" method="POST">
+
+        <form action="/<%= customer.id %>" method="POST">
             Name: <input type="text" name="name">
             Date of Birth: <input type="date" name="dob">
             <button type="submit">Add Cat</button>
         </form>
+
+
+        
             
 </section>
 

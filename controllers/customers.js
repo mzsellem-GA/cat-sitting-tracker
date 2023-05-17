@@ -58,8 +58,10 @@ function updateCustomerForm(req, res, next) {
 }
 
 function updateCustomer(req, res, next) {
-    Customer.findById(req.params.id)
+    console.log('this is req in updateCustomer', req)
+    Customer.findById({user: req.user._id, _id:req.params.id})
     .then(customer => {
+        console.log('this is customer in updateCustomer', customer)
         return customer.updateOne(req.body)
     })
     .then(() => {res.redirect(`/customers/${req.params.id}`)})
