@@ -7,15 +7,19 @@
         <h3>Cats:
         </h3>
         <ul>
-            <% customer.cats.forEach(function(cat) { %>
-                <li>
-                    <%= cat.name %>
-                    <%= cat.dob %>
-                    <form action="/<%= customer.id %>/<%= cat.id %>?_method=DELETE" method="POST">
-                        <button type="submit">X</button>
-                    </form>
-                </li>
-                <% }); %>
+            <% if (customer.cats) {%>
+                <% customer.cats.forEach(function(cat) { %>
+                    <li>
+                        <%= cat.name %>
+                        <%= cat.dob %>
+                        <form action="/<%= customer.id %>/<%= cat.id %>?_method=DELETE" method="POST">
+                            <button type="submit">X</button>
+                        </form>
+                    </li>
+                <% }); %>    
+            <% } else { %>
+                <h3>No Cats Yet</h3>
+            <% } %>
         </ul>
 
         <form action="/customers/<%= customer.id %>" method="POST">

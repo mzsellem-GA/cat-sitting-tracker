@@ -5,3 +5,14 @@
 .sitters-and-cat-gif {
   display: flex;
 }
+
+.field {
+  background-image: url("paper.gif");
+}
+.body-customer-index {
+  background-color:#c6e5ae;
+}
+
+.table {
+  background-color: white;
+}

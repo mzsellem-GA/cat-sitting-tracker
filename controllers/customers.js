@@ -28,8 +28,6 @@ function show(req, res, next) {
     Customer.find({user: req.user._id, _id:req.params.id})
     .populate('cats')
     .then(customer => {
-        //how to reqrite this for my purposes, id not correct
-        // if(!customer.user.equals(req.user._id)) throw new Error('Unauthorized')
         console.log('this is customer in show', customer)
         res.render('customers/show', { customer, title: 'Customer Details' })
     })
