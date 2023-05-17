@@ -1,10 +1,24 @@
 <%- include('../partials/header') %>
 
-<form action="/customers/<%= customer.id %>?_method=PUT" method="POST" autocomplete="off">
-    <br> Name: <input type="text" name="name" value="<%= customer.name %>"><br>
-    <br> Phone: <input type="number" name="phone" value="<%= customer.phone %>"><br>
-    <br> Address: <input type="text" name="address" value="<%= customer.address %>"><br>
-    <br><button type="submit">Update Customers</button>
-</form>
+<div class="form-floating mb-3"></div>
+    <form action="/customers/<%= customer.id %>?_method=PUT" method="POST" autocomplete="off">
+        <input type="text" name="name" value="<%= customer.name %>" class="form-control" id="floatingInput">
+        <label for="floatingInput">Name</label>
+        <br> Phone: <input type="number" name="phone" value="<%= customer.phone %>"><br>
+        <br> Address: <input type="text" name="address" value="<%= customer.address %>"><br>
+        <br><button type="submit">Update Customers</button>
+    </form>
+</div>
+
+
+
+<div class="form-floating mb-3">
+    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+    <label for="floatingInput">Email address</label>
+  </div>
+  <div class="form-floating">
+    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+    <label for="floatingPassword">Password</label>
+  </div>
 
 <%- include('../partials/footer') %>

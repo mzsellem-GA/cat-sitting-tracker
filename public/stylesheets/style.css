@@ -1,3 +1,7 @@
 .navbar {
-    background-image: linear-gradient(to left, #d6da93, #eddd07);
+    background-color: #af5ca9;
   }
+
+.sitters-and-cat-gif {
+  display: flex;
+}
