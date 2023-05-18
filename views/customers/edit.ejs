@@ -1,24 +1,25 @@
 <%- include('../partials/header') %>
-
-<div class="form-floating mb-3"></div>
-    <form action="/customers/<%= customer.id %>?_method=PUT" method="POST" autocomplete="off">
+<body class="edit-customer"></body>
+<div class="d-flex justify-content-center my-4">
+  <form action="/customers/<%= customer.id %>?_method=PUT" method="POST" autocomplete="off">
+    <fieldset>
+      <h2>Update Customer</h2>
+      <div class="form-floating mb-3">
         <input type="text" name="name" value="<%= customer.name %>" class="form-control" id="floatingInput">
         <label for="floatingInput">Name</label>
-        <br> Phone: <input type="number" name="phone" value="<%= customer.phone %>"><br>
-        <br> Address: <input type="text" name="address" value="<%= customer.address %>"><br>
-        <br><button type="submit">Update Customers</button>
-    </form>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="number" name="phone" value="<%= customer.phone %>" class="form-control" id="floatingPhone">
+        <label for="floatingPhone">Phone</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="text" name="address" value="<%= customer.address %>" class="form-control" id="floatingAddress">
+        <label for="floatingAddress">Address</label>
+      </div>
+      <div class="mt-4 text-center">
+        <button type="submit" class="btn btn-custom">Update Customers</button>
+      </div>
+    </fieldset>
+  </form>
 </div>
-
-
-
-<!-- <div class="form-floating mb-3">
-    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-    <label for="floatingInput">Email address</label>
-  </div>
-  <div class="form-floating">
-    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-    <label for="floatingPassword">Password</label>
-  </div> -->
-
 <%- include('../partials/footer') %>

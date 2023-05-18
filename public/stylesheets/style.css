@@ -16,10 +16,7 @@
 .table {
   background-color: white;
 }
-.customer-button {
-  color: white;
-  background-color: #af5ca9
-}
+
 .customer-name-link {
   color: black;
   text-decoration: none;
@@ -28,16 +25,13 @@
   color: white;
   text-decoration: none;
 }
-.body-customer-new {
+.body-customer-new, .show-page, .edit-customer {
   background-color:#c6e5ae;
 }
 .btn-custom {
   background-color: #af5ca9;
   border-color: #af5ca9;
-  color: #ffffff;
-}
-.edit-customer-link {
   color: white;
   text-decoration: none;
-  border-color: #af5ca9;
 }
+

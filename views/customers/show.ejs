@@ -1,22 +1,25 @@
 <%- include('../partials/header') %>
+<body class="show-page"></body>
 <section>
-        <table class="table">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Address</th>
-                <th>Phone</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><%= customer[0].name %></td>
-                <td><%= customer[0].address %></td>
-                <td><%= customer[0].phone %></td>
-              </tr>
-            </tbody>
-          </table>
-          <div><button type="submit"> <a class="btn btn-custom edit-customer-link" href="/customers/<%= customer[0].id %>/edit">Edit</a></button></div>
+  <table class="table my-4" style="border-collapse: collapse; border: solid black 1px; border-radius: 10px; width: 50%;">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Phone</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= customer[0].name %></td>
+        <td><%= customer[0].address %></td>
+        <td><%= customer[0].phone %></td>
+        <td><a class="btn btn-primary" href="/customers/<%= customer[0].id %>/edit">Edit</a></td>
+      </tr>
+    </tbody>
+  </table>
+  
         <!-- <h3>Cats:
         </h3>
         <ul>
@@ -39,7 +42,7 @@
               <tr>
                 <th>Name</th>
                 <th>Date of Birth</th>
-                <th>Action</th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
@@ -64,12 +67,30 @@
           </table>
 
 
-        <form action="/cats/<%= customer[0].id %>" method="POST">
+        <!-- <form action="/cats/<%= customer[0].id %>" method="POST">
             Name: <input type="text" name="name">
             Date of Birth: <input type="date" name="dob">
             <button type="submit">Add Cat</button>
-        </form>
+        </form> -->
 
+        <form action="/cats/<%= customer[0].id %>" method="POST">
+          <div class="row">
+            <div class="col-sm-3">
+              <div class="form-floating mb-3">
+                <input type="text" name="name" class="form-control" id="name" placeholder=" ">
+                <label for="name">Name</label>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="form-floating mb-3">
+                <input type="date" name="dob" class="form-control" id="dob" placeholder=" ">
+                <label for="dob">Date of Birth</label>
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Add Cat</button>
+        </form>
+        
 
         
             
