@@ -5,7 +5,7 @@
   <table class="table my-5 table-rounded rounded-4 overflow-hidden" style="border-collapse: collapse; border: solid black 1px; border-radius: 10px; width: 50%;">
     <thead>
       <tr>
-        <th>Name</th>
+        <th>Customer Name</th>
         <th>Address</th>
         <th>Phone</th>
         <th></th>
@@ -16,14 +16,14 @@
         <td><%= customer[0].name %></td>
         <td><%= customer[0].address %></td>
         <td><%= customer[0].phone %></td>
-        <td><a class="btn btn-primary" href="/customers/<%= customer[0].id %>/edit">Edit</a></td>
+        <td><a class="btn btn-custom" href="/customers/<%= customer[0].id %>/edit">Edit</a></td>
       </tr>
     </tbody>
   </table>
-        <table class="table table-rounded rounded-4 overflow-hidden w-50">
+        <table class="table my-5 table-rounded rounded-4 overflow-hidden w-50">
             <thead>
               <tr>
-                <th>Name</th>
+                <th>Cat Name</th>
                 <th>Date of Birth</th>
                 <th></th>
               </tr>
@@ -36,7 +36,7 @@
                     <td><%= cat.dob %></td>
                     <td>
                       <form action="/cats/<%= customer[0].id %>/<%= cat.id %>?_method=DELETE" method="POST">
-                        <button type="submit" class="btn btn-danger">Delete</button>
+                        <button type="submit" class="btn btn-danger">X</button>
                       </form>
                     </td>
                   </tr>
@@ -50,30 +50,19 @@
           </table>
         </center>
 
-        <!-- <form action="/cats/<%= customer[0].id %>" method="POST">
-            Name: <input type="text" name="name">
-            Date of Birth: <input type="date" name="dob">
-            <button type="submit">Add Cat</button>
-        </form> -->
-
-        <form action="/cats/<%= customer[0].id %>" method="POST">
-          <div class="row">
-            <div class="col-sm-3">
-              <div class="form-floating mb-3">
-                <input type="text" name="name" class="form-control" id="name" placeholder=" ">
-                <label for="name">Name</label>
-              </div>
-            </div>
-            <div class="col-sm-3">
-              <div class="form-floating mb-3">
-                <input type="date" name="dob" class="form-control" id="dob" placeholder=" ">
-                <label for="dob">Date of Birth</label>
-              </div>
-            </div>
-          </div>
-          <button type="submit" class="btn btn-primary">Add Cat</button>
-        </form>
         
+          <center>
+          <h3>Add a Cat to Customer</h3>
+          <form class="form-inline">
+            <div class="form-group w-25">
+              <input type="text" class="form-control mb-2 mr-sm-2" id="name" placeholder="Name">
+            </div>
+            <div class="form-group w-25">
+              <input type="date" class="form-control mb-2 mr-sm-2" id="dob" placeholder="Date of Birth">
+            </div>
+            <button type="submit" class="btn btn-custom mb-2">Add Cat</button>
+          </form>
+        </center>
 
         
             
