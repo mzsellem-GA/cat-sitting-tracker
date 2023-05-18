@@ -3,17 +3,13 @@
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="panel panel-default">
-                <table class="table table-wrapper table-striped table-rounded rounded-4 overflow-hidden table-hover">
-                    <thead>
-                        <tr>
-                            <th>Customer Name</th>
-                            <th></th>
-                        </tr>
-                    </thead>
+                <h2>Customer List</h2><br>
+                <h5>Select a Customer Name</h5>
+                <table class="table my-4 table-wrapper table-striped table-rounded rounded-4 overflow-hidden table-hover">
                     <tbody>
                         <% customers.forEach(function(customer) { %>
                         <tr>
-                            <td class="col col-sm-6">
+                            <td class="col col-sm-6 align-middle">
                                 <a class="customer-name-link" href="/customers/<%= customer.id %>">
                                     <%= customer.name %>
                                 </a>
