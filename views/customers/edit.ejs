@@ -1,10 +1,11 @@
 <%- include('../partials/header') %>
-<body class="edit-customer"></body>
 <div class="d-flex justify-content-center my-5">
   <form action="/customers/<%= customer.id %>?_method=PUT" method="POST" autocomplete="off">
     <fieldset>
-      <h3>Update Customer</h3>
-      <div class="form-floating mb-3">
+      <center>
+        <h3>Update Customer</h3>
+      </center>
+      <div class="form-floating mb-3 form-input">
         <input type="text" name="name" value="<%= customer.name %>" class="form-control" id="floatingInput">
         <label for="floatingInput">Name</label>
       </div>

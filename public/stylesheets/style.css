@@ -6,13 +6,6 @@
   display: flex;
 }
 
-.field {
-  background-image: url("paper.gif");
-}
-.body-customer-index {
-  background-color:#c6e5ae;
-}
-
 .table {
   background-color: white;
 }
@@ -25,13 +18,46 @@
   color: white;
   text-decoration: none;
 }
-.body-customer-new, .show-page, .edit-customer {
-  background-color:#c6e5ae;
-}
+
 .btn-custom {
   background-color: #af5ca9;
   border-color: #af5ca9;
   color: white;
   text-decoration: none;
 }
+.body-in-header, .home-page {
+  font-family: 'Nunito', sans-serif; 
+  background-color:#c6e5ae
+}
 
+.form-input {
+  width: 400px 
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bg-image {
+  background-image: url('https://cdn.shopify.com/s/files/1/0228/9614/8544/articles/cat-5376106_1920_1920x.jpg?v=1651304600');
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+
+.has-bg-img {
+  position: relative;
+}
+
+.bg-img {
+  display: none;
+}
+
+.btn-danger {
+  margin: 8px;
+}
