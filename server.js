@@ -47,7 +47,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/', indexRouter)
 app.use('/customers', customersRouter)
-app.use('/', catsRouter)
+app.use('/cats', catsRouter)
 
 app.use(function (req, res, next) {
 	next(createError(404))
