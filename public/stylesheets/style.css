@@ -61,3 +61,10 @@
 .btn-danger {
   margin: 8px;
 }
+
+.home-page-image {
+  height: 350px;
+  width: 525px;
+  border-radius: 20px;
+}
+
