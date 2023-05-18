@@ -7,12 +7,11 @@ function index(req, res, next) {
         })
         .catch(next)
 }
-//new
+
 function newCustomer(req, res) {
     res.render('customers/new', { title: 'New Customer'})
 }
 
-//create
 function create(req, res, next) {  
     req.body.user = req.user._id
     Customer.create(req.body)
@@ -22,18 +21,15 @@ function create(req, res, next) {
         .catch(next)
 }
 
-//show
 function show(req, res, next) {
     Customer.find({user: req.user._id, _id:req.params.id})
     .populate('cats')
     .then(customer => {
         res.render('customers/show', { customer, title: 'Customer Details' })
     })
-
     .catch(next)
 }
 
-//delete
 function deleteCustomer(req, res, next) {
     Customer.findById({user: req.user._id, _id:req.params.id})
         .then(customer => {
