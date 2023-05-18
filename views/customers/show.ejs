@@ -52,12 +52,12 @@
         
           <center>
           <h3>Add a Cat to Customer</h3>
-          <form class="form-inline">
+          <form class="form-inline" action="/cats/<%= customer[0].id %>" method="POST">
             <div class="form-group w-25">
-              <input type="text" class="form-control mb-2 mr-sm-2" id="name" placeholder="Name">
+              <input type="text" class="form-control mb-2 mr-sm-2" name="name" placeholder="Name">
             </div>
             <div class="form-group w-25">
-              <input type="date" class="form-control mb-2 mr-sm-2" id="dob" placeholder="Date of Birth">
+              <input type="date" class="form-control mb-2 mr-sm-2" name="dob" placeholder="Date of Birth">
             </div>
             <button type="submit" class="btn btn-custom mb-2">Add Cat</button>
           </form>
