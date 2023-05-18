@@ -49,7 +49,7 @@
                     <td><%= cat.name %></td>
                     <td><%= cat.dob %></td>
                     <td>
-                      <form action="/cats/<%= customer.id %>/<%= cat.id %>?_method=DELETE" method="POST">
+                      <form action="/cats/<%= customer[0].id %>/<%= cat.id %>?_method=DELETE" method="POST">
                         <button type="submit" class="btn btn-danger">Delete</button>
                       </form>
                     </td>
