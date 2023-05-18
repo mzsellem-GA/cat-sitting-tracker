@@ -23,7 +23,7 @@
 - MongoDB
 - Mongoose
 # Getting Started:
-- Heroku:
+- Fly.io: https://sellemsitters.fly.dev/
 - Trello Board: https://trello.com/invite/b/KwDBNpZ4/ATTI7ec288d030f0570a9e3a92a7d15f587753F2BC5B/project-2
 # Next Steps:
 - I don't want other users to be able to add or delete my cats
