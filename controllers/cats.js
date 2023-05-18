@@ -3,7 +3,6 @@ const Customer = require('../models/customer')
 function addCatToCustomer(req, res, next) {
     Customer.findById(req.params.customerId)
         .then((customer) => {
-            console.log('this is customer in catcreate', customer)
             customer.cats.push(req.body)
             return customer.save()
         })

@@ -43,13 +43,6 @@
     justify-content: center;
 }
 
-.bg-image {
-  background-image: url('https://cdn.shopify.com/s/files/1/0228/9614/8544/articles/cat-5376106_1920_1920x.jpg?v=1651304600');
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
-}
-
 .has-bg-img {
   position: relative;
 }
